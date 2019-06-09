@@ -30,3 +30,13 @@ Then the output should be = [94133,94133] [94200,94299] [94600,94699]
 
 If the input = [94133,94133] [94200,94299] [94226,94399]
 Then the output should be = [94133,94133] [94200,94399]
+
+<h1>Running the Program</h1>
+<p>To run the program from the command line by providing the  following format: [#####,#####], separated by spaces.</p> 
+<p>If the zip code ranges are valid the reduced set of ranges will be printed to the console.</p>
+
+<h2>Unit Tests</h2>
+<p>Unit tests for all classes can be run from the command line by typing the following within the project's directory:</p>
+<p><strong>mvn test</strong></p>
+
+
