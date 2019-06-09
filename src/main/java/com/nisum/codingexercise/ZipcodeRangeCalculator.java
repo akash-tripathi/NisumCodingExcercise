@@ -8,6 +8,12 @@ import java.util.List;
 import com.nisum.codingexercise.model.ZipCodeRange;
 import com.nisum.codingexercise.util.ZipcodeUtility;
 
+/**
+ * This class will take a collection of ranges and produce the minimum number of ranges
+ * that are equivalent to the input
+ * @author Akash Tripathi
+ *
+ */
 public class ZipcodeRangeCalculator {
 
 	/**
@@ -22,7 +28,7 @@ public class ZipcodeRangeCalculator {
 		//first compare lower bounds to get ascending order
 		int comp = range1.getLowerBound() - range2.getLowerBound();
 		
-		//if there is a tie for the lower bound, we want the upper bound to be in ascending order
+		//if lower bound is same, we want the upper bound to be in ascending order
 		if(comp == 0) {
 			comp = range1.getUpperBound() - range2.getUpperBound();
 		}
@@ -46,9 +52,7 @@ public class ZipcodeRangeCalculator {
 				int lowerBound = Integer.parseInt(tokens[0]);
 				int upperBound = Integer.parseInt(tokens[1]);
 				
-				//switch upper bound and lower bound if upper bound is less,
-				//we don't care about the direction of the ranges but for consolidation we need
-				//the lowerBound to be on the left
+				//switch between upper and lower bound if upper bound is less
 				if(upperBound < lowerBound) {
 					int temp = lowerBound;
 					lowerBound = upperBound;
@@ -91,10 +95,7 @@ public class ZipcodeRangeCalculator {
 		
 		reducedRanges.add(ranges.get(0));
 		
-		//iterate through the remaining ranges to determine where we can reduce, 
-		//if (n).upperBound >= (n+1).lowerBound we can consolidate ranges,
-		//if (n) == (n+1) we have a duplicate range that we can ignore
-		//if range can't be consolidated with the current add it to the list and set as currentRange
+		//iterate through the ranges to determine where we can change
 		ZipCodeRange currentZipCodeRange = ranges.get(0);
 		int currentIdx = 0;
 		for(int i = 1; i < ranges.size(); i++) {
