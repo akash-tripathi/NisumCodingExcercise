@@ -12,10 +12,7 @@ package com.nisum.codingexercise.model;
 		private int upperBound;
 		
 		/**
-		 * Default constructor, create a range object with a lower and upper bound.
-		 * 
-		 * @param lowerBound This is the lower bound of the range
-		 * @param upperBound This is the upper bound of the range
+		 * No arg Constructor, create a range object
 		 */
 		public ZipCodeRange(int lowerBound, int upperBound) {
 			this.lowerBound = lowerBound;
@@ -23,9 +20,20 @@ package com.nisum.codingexercise.model;
 		}
 		
 		/**
-		 * Compares equality of two zip code ranges by checking the equality of both lower and upper bounds.
+		 * Constructor, create a range object with a lower and upper bound.
 		 * 
-		 * @param obj The other zip code range to compare equality with
+		 * @param lowerBound 
+		 * @param upperBound 
+		 */
+		public ZipCodeRange(int lowerBound, int upperBound) {
+			this.lowerBound = lowerBound;
+			this.upperBound = upperBound;
+		}
+		
+		/**
+		 * Override equals method to compares equality of two zip code ranges by checking its lower and upper bounds.
+		 * 
+		 * @param obj 
 		 */
 		@Override
 		public boolean equals(Object obj) {
@@ -34,7 +42,7 @@ package com.nisum.codingexercise.model;
 		}
 		
 		/**
-		 * @return A zip code range with the following format [#####,#####]
+		 * @return zip code range 
 		 */
 		@Override
 		public String toString() {
@@ -42,28 +50,28 @@ package com.nisum.codingexercise.model;
 		}
 
 		/**
-		 * @return zip code range lowerBound to set
+		 * @return zip code lowerBound
 		 */
 		public int getLowerBound() {
 			return lowerBound;
 		}
 
 		/**
-		 * @param lowerBound zip code range lowerbound to set
+		 * @param lowerBound to set lowerbound
 		 */
 		public void setLowerBound(int lowerBound) {
 			this.lowerBound = lowerBound;
 		}
 
 		/**
-		 * @return zip code range upperBound
+		 * @return zip code upperBound
 		 */
 		public int getUpperBound() {
 			return upperBound;
 		}
 
 		/**
-		 * @param upperBound zip code range upperBound to set
+		 * @param upperBound to set upperBound
 		 */
 		public void setUpperBound(int upperBound) {
 			this.upperBound = upperBound;
