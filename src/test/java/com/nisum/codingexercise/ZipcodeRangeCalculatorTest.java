@@ -73,7 +73,7 @@ public class ZipcodeRangeCalculatorTest {
 	/**
 	 * Test case 4:
 	 * 
-	 * some Ranges is higher to lower
+	 * some Ranges are higher to lower
 	 * 
 	 * Input: [31111,11111] [11111,31111] [11110,11111] [11117,10000] [11110,11119] [32110,33112] 
 	 * Expected: [11111,31111] [32110,33112]
@@ -86,4 +86,17 @@ public class ZipcodeRangeCalculatorTest {
 		Assert.assertEquals("[10000,31111] [32110,33112]", ZipcodeUtility.join(newRanges, " "));
 	}
 
+	/**
+	 * Test case 5:
+	 * 
+	 * Invalid Ranges
+	 * 
+	 * Input: [3111111,1111111] [111111,311111] 
+	 * Expected: IllegalArgumentException 
+	 */
+	@Test(expected=IllegalArgumentException.class)
+	public void case5() {
+		ZipCodeRange[] newRanges = zipcodeRangeCalculator.reduceZipCodeRanges(new String[]{
+			"[3111111,111111]", "[11111,311111]"});
+	}
 }
