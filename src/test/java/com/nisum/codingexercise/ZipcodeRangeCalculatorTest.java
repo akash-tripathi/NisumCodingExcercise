@@ -8,12 +8,12 @@ import com.nisum.codingexercise.model.ZipCodeRange;
 import com.nisum.codingexercise.util.ZipcodeUtility;
 
 
-	/**
-	 * This class is having test cases to test the functionality of ZipcodeRangeCalculator class.
-	 * 
-	 * @Author Akash Tripathi
-	 * 
-	 */
+/**
+ * This class is having test cases to test the functionality of ZipcodeRangeCalculator class.
+ * 
+ * @author Akash Tripathi
+ * 
+ */
 public class ZipcodeRangeCalculatorTest {
 	
 	ZipcodeRangeCalculator zipcodeRangeCalculator;
